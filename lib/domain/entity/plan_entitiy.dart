@@ -7,8 +7,8 @@ enum SubscriptionTier {
 }
 
 class PlanEntity extends Equatable {
-  late String name;
-  late double price;
+  late final String name;
+  late final double price;
 
   final SubscriptionTier tier;
 

@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tehnician_assignment_uros/domain/entity/plan_entitiy.dart';
@@ -5,7 +7,6 @@ import 'package:flutter_tehnician_assignment_uros/typography.dart';
 import 'package:flutter_tehnician_assignment_uros/validators.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/background_widget.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/plan.dart';
-import 'package:flutter_tehnician_assignment_uros/widgets/subscription_switch.dart';
 import 'package:gap/gap.dart';
 
 class FormScreen extends StatefulWidget {
@@ -222,19 +223,19 @@ class _FormScreenState extends State<FormScreen> {
       content: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Plan(
               plan: PlanEntity(tier: SubscriptionTier.basic),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Plan(
               plan: PlanEntity(tier: SubscriptionTier.normal),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Plan(
               plan: PlanEntity(tier: SubscriptionTier.advanced),
             ),
