@@ -18,9 +18,9 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
-  final TextEditingController _fullNameController = TextEditingController(text: 'uros');
-  final TextEditingController _emailController = TextEditingController(text: 'urosvgd@gmail.com');
-  final TextEditingController _phoneNumberController = TextEditingController(text: '+381638912427');
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
 
   int _currentStep = 0;
   final int step1 = 0;

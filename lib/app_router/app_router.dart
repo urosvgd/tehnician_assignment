@@ -7,12 +7,14 @@ part 'app_router.gr.dart';
 
 @AdaptiveAutoRouter(
   routes: <AutoRoute>[
-    AutoRoute(
+    CustomRoute(
       page: LandingScreen,
+      transitionsBuilder: TransitionsBuilders.slideRight,
       initial: true,
     ),
-    AutoRoute(
+    CustomRoute(
       page: FormScreen,
+      transitionsBuilder: TransitionsBuilders.slideLeft,
       initial: false,
     ),
   ],

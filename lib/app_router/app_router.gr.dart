@@ -18,15 +18,23 @@ class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     LandingRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
+      return CustomPage<dynamic>(
         routeData: routeData,
         child: const LandingScreen(),
+        transitionsBuilder: TransitionsBuilders.slideRight,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
     FormRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
+      final args =
+          routeData.argsAs<FormRouteArgs>(orElse: () => const FormRouteArgs());
+      return CustomPage<dynamic>(
         routeData: routeData,
-        child: FormScreen(),
+        child: FormScreen(key: args.key),
+        transitionsBuilder: TransitionsBuilders.slideLeft,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
   };
@@ -58,12 +66,24 @@ class LandingRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [FormScreen]
-class FormRoute extends PageRouteInfo<void> {
-  const FormRoute()
+class FormRoute extends PageRouteInfo<FormRouteArgs> {
+  FormRoute({Key? key})
       : super(
           FormRoute.name,
           path: '/form-screen',
+          args: FormRouteArgs(key: key),
         );
 
   static const String name = 'FormRoute';
+}
+
+class FormRouteArgs {
+  const FormRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'FormRouteArgs{key: $key}';
+  }
 }

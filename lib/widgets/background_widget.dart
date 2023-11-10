@@ -57,6 +57,7 @@ class BackgroundWidget extends StatelessWidget {
                           text: "Proceedix Enterpirse",
                           isPrimary: true,
                           icon: Icons.cloud,
+                          showArrow: true,
                           onPressed: () {
                             context.router.pushNamed('/form-screen');
                           },
