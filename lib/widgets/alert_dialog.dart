@@ -11,7 +11,7 @@ Future<void> showAlertDialog(context) async {
         content: const SingleChildScrollView(
           child: ListBody(
             children: <Widget>[
-              Text("After confirming you're going to enjoy Advanced tier!"),
+              Text("After confirming you're going to enjoy tier!"),
             ],
           ),
         ),

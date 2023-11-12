@@ -65,10 +65,11 @@ class _StepperWidgetState extends State<StepperWidget> {
           }
         },
         onBack: () {
+          print(currentStepFromBloc);
           if (currentStepFromBloc > step1) {
             bloc.add(const FormScreenEvent.onBackClick());
           } else {
-            context.router.pop();
+            context.router.pushNamed('/');
           }
         },
       );

@@ -11,6 +11,7 @@ class TypographyConstants {
   static const TextStyle whiteText = TextStyle(
     color: Colors.white,
     fontSize: 16,
+    overflow: TextOverflow.ellipsis,
   );
   static const TextStyle errorText = TextStyle(
     color: Colors.red,

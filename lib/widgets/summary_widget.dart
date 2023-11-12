@@ -26,10 +26,12 @@ class SummaryWidget extends StatelessWidget {
               const Text(
                 "Full Name:",
                 style: TypographyConstants.whiteText,
+                maxLines: 3,
               ),
               Text(
                 context.read<FormScreenBloc>().state.fullName.value.fold((l) => '', (r) => r),
                 style: TypographyConstants.whiteText,
+                maxLines: 3,
               ),
             ],
           ),
@@ -39,13 +41,19 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                "Email:",
-                style: TypographyConstants.whiteText,
+              const Expanded(
+                child: Text(
+                  "Email:",
+                  style: TypographyConstants.whiteText,
+                  maxLines: 3,
+                ),
               ),
-              Text(
-                context.read<FormScreenBloc>().state.emailAddress.value.fold((l) => '', (r) => r),
-                style: TypographyConstants.whiteText,
+              Expanded(
+                child: Text(
+                  context.read<FormScreenBloc>().state.emailAddress.value.fold((l) => '', (r) => r),
+                  style: TypographyConstants.whiteText,
+                  maxLines: 3,
+                ),
               ),
             ],
           ),
@@ -55,13 +63,18 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                "Phone number:",
-                style: TypographyConstants.whiteText,
+              const Expanded(
+                child: Text(
+                  "Phone number:",
+                  style: TypographyConstants.whiteText,
+                ),
               ),
-              Text(
-                context.read<FormScreenBloc>().state.phoneNumber.value.fold((l) => '', (r) => r),
-                style: TypographyConstants.whiteText,
+              Expanded(
+                child: Text(
+                  context.read<FormScreenBloc>().state.phoneNumber.value.fold((l) => '', (r) => r),
+                  style: TypographyConstants.whiteText,
+                  maxLines: 3,
+                ),
               ),
             ],
           ),
@@ -74,10 +87,12 @@ class SummaryWidget extends StatelessWidget {
               const Text(
                 "Plan:",
                 style: TypographyConstants.whiteText,
+                maxLines: 3,
               ),
               Text(
                 tier.name,
                 style: TypographyConstants.whiteText,
+                maxLines: 3,
               ),
             ],
           ),
@@ -124,7 +139,7 @@ class SummaryWidget extends StatelessWidget {
                 style: TypographyConstants.whiteText,
               ),
               Text(
-                "${tier.price.toString()}e",
+                "€${tier.price.toString()}",
                 style: TypographyConstants.whiteText,
               ),
             ],

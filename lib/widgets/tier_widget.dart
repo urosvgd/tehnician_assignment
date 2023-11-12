@@ -15,7 +15,7 @@ class TierWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent,
+      color: Colors.white.withAlpha(50),
       child: InkWell(
         onTap: () {
           onTap(tier);
@@ -50,7 +50,7 @@ class TierWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    tier.price.toString(),
+                    "€${tier.price.toString()}",
                     style: TypographyConstants.whiteText,
                   ),
                 )
