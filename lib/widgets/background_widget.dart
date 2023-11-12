@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/button_widget.dart';
 
 class BackgroundWidget extends StatelessWidget {
@@ -19,16 +20,16 @@ class BackgroundWidget extends StatelessWidget {
                 begin: Alignment.centerLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Color(0xff3B7C99),
-                  Color(0xff4395B2),
-                  Color(0xff835E8A),
+                  ColorConstants.gradientColor1,
+                  ColorConstants.gradientColor2,
+                  ColorConstants.gradientColor3,
                 ],
               ).createShader(bounds);
             },
             blendMode: BlendMode.colorBurn,
             child: const Image(
               fit: BoxFit.fill,
-              image: AssetImage('assets/background.png'),
+              image: AssetImage(AssetConsants.background),
             ),
           ),
         ),
@@ -45,7 +46,7 @@ class BackgroundWidget extends StatelessWidget {
                   ? Padding(
                       padding: const EdgeInsets.only(top: 36.0),
                       child: Image.asset(
-                        'assets/logo.png',
+                        AssetConsants.logo,
                         width: 250,
                       ),
                     )

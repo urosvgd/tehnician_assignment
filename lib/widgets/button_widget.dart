@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tehnician_assignment_uros/constants/color.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String text;
