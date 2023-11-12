@@ -48,7 +48,8 @@ dependencies:
   rxdart: ^0.27.7
   date_format: ^2.0.7
   gap: any
-
+  formz: ^0.6.1
+ 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2

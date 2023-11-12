@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
-import 'package:flutter_tehnician_assignment_uros/domain/entity/plan_entitiy.dart';
+import 'package:flutter_tehnician_assignment_uros/domain/entity/tier_entity.dart';
 
-class PlanWidget extends StatelessWidget {
-  final PlanEntity plan;
+class TierWidget extends StatelessWidget {
+  final Tier tier;
+  final Function(Tier) onTap;
 
-  const PlanWidget({
+  const TierWidget({
     super.key,
-    required this.plan,
+    required this.tier,
+    required this.onTap,
   });
 
   @override
@@ -15,12 +17,14 @@ class PlanWidget extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          onTap(tier);
+        },
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             border: Border.all(
-              color: Colors.white70,
+              color: tier.isSelected ? Colors.amber : Colors.white70,
               width: 1.0,
             ),
             gradient: const LinearGradient(
@@ -39,14 +43,14 @@ class PlanWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    plan.name,
+                    tier.name,
                     style: TypographyConstants.whiteText,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    plan.price.toString(),
+                    tier.price.toString(),
                     style: TypographyConstants.whiteText,
                   ),
                 )
