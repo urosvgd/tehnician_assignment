@@ -34,19 +34,12 @@ dependencies:
     sdk: flutter
 
   freezed_annotation: any
-  cached_network_image: ^3.2.3
-  intl: ^0.18.0
   auto_route: ^5.0.4
   get_it: ^7.2.0
-  dio: ^4.0.6
-  flutter_svg: ^2.0.0
   flutter_bloc: ^8.1.1
   dartz: ^0.10.1
-  json_serializable: ^6.6.0
   json_annotation: ^4.8.1
   equatable: ^2.0.5
-  rxdart: ^0.27.7
-  date_format: ^2.0.7
   gap: any
   formz: ^0.6.1
  
@@ -57,7 +50,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  json_serializable: ^6.6.0
   build_runner: ^2.4.6
   freezed: any
   auto_route_generator: any
