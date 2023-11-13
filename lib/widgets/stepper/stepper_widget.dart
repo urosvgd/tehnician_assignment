@@ -12,6 +12,7 @@ import 'package:flutter_tehnician_assignment_uros/widgets/stepper/step_one.dart'
 import 'package:flutter_tehnician_assignment_uros/widgets/stepper/step_two.dart';
 
 import 'package:flutter_tehnician_assignment_uros/widgets/summary_widget.dart';
+import 'package:flutter_tehnician_assignment_uros/widgets/text_widget.dart';
 
 class StepperWidget extends StatefulWidget {
   final GlobalKey<FormState> formKey;
@@ -65,7 +66,6 @@ class _StepperWidgetState extends State<StepperWidget> {
           }
         },
         onBack: () {
-          print(currentStepFromBloc);
           if (currentStepFromBloc > step1) {
             bloc.add(const FormScreenEvent.onBackClick());
           } else {
@@ -109,15 +109,14 @@ class _StepperWidgetState extends State<StepperWidget> {
     return Step(
       state: currentStepFromBloc > 2 ? StepState.complete : StepState.indexed,
       isActive: currentStepFromBloc >= 2,
-      title: const Text(
+      title: const TextWidget(
         'Summary',
-        style: TypographyConstants.whiteText,
       ),
       content: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+        padding: DimensionConstants.verticalPaddingAll8,
         decoration: BoxDecoration(
           color: Colors.grey,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: DimensionConstants.standardBorderRadius,
         ),
         child: SummaryWidget(
           isYearly: bloc.state.isTierYearly,
@@ -134,9 +133,8 @@ class _StepperWidgetState extends State<StepperWidget> {
     return Step(
       state: currentStepFromBloc > step2 ? StepState.complete : StepState.indexed,
       isActive: currentStepFromBloc >= step2,
-      title: const Text(
+      title: const TextWidget(
         'Choose tier',
-        style: TypographyConstants.whiteText,
       ),
       content: StepTwo(
         tiers: tiers,
@@ -159,9 +157,8 @@ class _StepperWidgetState extends State<StepperWidget> {
     return Step(
       state: currentStepFromBloc > 0 ? StepState.complete : StepState.indexed,
       isActive: currentStepFromBloc >= 0,
-      title: const Text(
+      title: const TextWidget(
         'Personal informations',
-        style: TypographyConstants.whiteText,
       ),
       content: StepOne(
         onFullNameChange: (value) {

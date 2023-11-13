@@ -22,7 +22,7 @@ class TierWidget extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: DimensionConstants.standardBorderRadius,
             border: Border.all(
               color: tier.isSelected ? Colors.amber : Colors.white70,
               width: 1.0,
@@ -30,25 +30,21 @@ class TierWidget extends StatelessWidget {
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
-                ColorConstants.gradientColor1,
-                ColorConstants.gradientColor2,
-                ColorConstants.gradientColor3,
-              ],
+              colors: ColorConstants.gradientColors,
             ),
           ),
           child: Center(
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: DimensionConstants.verticalPaddingAll8,
                   child: Text(
                     tier.name,
                     style: TypographyConstants.whiteText,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: DimensionConstants.verticalPaddingAll8,
                   child: Text(
                     "€${tier.price.toString()}",
                     style: TypographyConstants.whiteText,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tehnician_assignment_uros/widgets/textformfield_widget.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
+import 'package:flutter_tehnician_assignment_uros/widgets/text_form_field_widget.dart';
 
 class StepOne extends StatefulWidget {
   final Function(String) onFullNameChange;
@@ -35,19 +36,20 @@ class _StepOneState extends State<StepOne> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 10),
-        TextFormFieldWidget(
-          isNumberKeyboard: false,
-          controller: fullNameController,
-          onChange: (value) {
-            widget.onFullNameChange(value);
-          },
-          labelText: 'Full name',
-          validator: (_) {
-            return widget.onFullNameValidator(_);
-          },
+        Padding(
+          padding: DimensionConstants.verticalPadding8,
+          child: TextFormFieldWidget(
+            isNumberKeyboard: false,
+            controller: fullNameController,
+            onChange: (value) {
+              widget.onFullNameChange(value);
+            },
+            labelText: 'Full name',
+            validator: (_) {
+              return widget.onFullNameValidator(_);
+            },
+          ),
         ),
-        const SizedBox(height: 10),
         TextFormFieldWidget(
           isNumberKeyboard: false,
           controller: emailController,
@@ -59,17 +61,19 @@ class _StepOneState extends State<StepOne> {
             return widget.onEmailValidator(value);
           },
         ),
-        const SizedBox(height: 10),
-        TextFormFieldWidget(
-          isNumberKeyboard: true,
-          controller: phoneNumberController,
-          labelText: 'Phone number',
-          onChange: (value) {
-            widget.onPhoneNumberChange(value);
-          },
-          validator: (String? value) {
-            return widget.onPhoneNumberValidator(value);
-          },
+        Padding(
+          padding: DimensionConstants.verticalPadding8,
+          child: TextFormFieldWidget(
+            isNumberKeyboard: true,
+            controller: phoneNumberController,
+            labelText: 'Phone number',
+            onChange: (value) {
+              widget.onPhoneNumberChange(value);
+            },
+            validator: (String? value) {
+              return widget.onPhoneNumberValidator(value);
+            },
+          ),
         ),
       ],
     );

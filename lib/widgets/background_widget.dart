@@ -19,11 +19,7 @@ class BackgroundWidget extends StatelessWidget {
               return const LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.bottomRight,
-                colors: [
-                  ColorConstants.gradientColor1,
-                  ColorConstants.gradientColor2,
-                  ColorConstants.gradientColor3,
-                ],
+                colors: ColorConstants.gradientColors,
               ).createShader(bounds);
             },
             blendMode: BlendMode.colorBurn,
@@ -36,7 +32,9 @@ class BackgroundWidget extends StatelessWidget {
         Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(color: Colors.black.withOpacity(0.1)),
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.1),
+          ),
         ),
         Center(
           child: Column(

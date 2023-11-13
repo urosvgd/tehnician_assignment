@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
 import 'package:flutter_tehnician_assignment_uros/domain/entity/tier_entity.dart';
+import 'package:flutter_tehnician_assignment_uros/widgets/text_widget.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/tier_widget.dart';
 
 class StepTwo extends StatelessWidget {
@@ -8,7 +9,14 @@ class StepTwo extends StatelessWidget {
   final Function(Tier) onTierTap;
   final Function(bool) onToggleYearly;
   final bool isTierYearly;
-  const StepTwo({super.key, required this.tiers, required this.onTierTap, required this.onToggleYearly, required this.isTierYearly});
+
+  const StepTwo({
+    super.key,
+    required this.tiers,
+    required this.onTierTap,
+    required this.onToggleYearly,
+    required this.isTierYearly,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +25,7 @@ class StepTwo extends StatelessWidget {
         Column(
           children: tiers
               .map((e) => Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: DimensionConstants.verticalPaddingAll8,
                     child: TierWidget(
                       onTap: (tier) {
                         onTierTap(tier);
@@ -30,9 +38,8 @@ class StepTwo extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            const TextWidget(
               "Monthly",
-              style: TypographyConstants.whiteText,
             ),
             Switch(
               value: isTierYearly,
@@ -40,16 +47,14 @@ class StepTwo extends StatelessWidget {
                 onToggleYearly(value);
               },
             ),
-            const Text(
+            const TextWidget(
               "Yearly",
-              style: TypographyConstants.whiteText,
             ),
           ],
         ),
         isTierYearly
-            ? const Text(
+            ? const TextWidget(
                 "You have 2 months free",
-                style: TypographyConstants.whiteText,
               )
             : const SizedBox.shrink()
       ],

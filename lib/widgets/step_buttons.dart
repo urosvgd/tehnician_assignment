@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
+import 'package:flutter_tehnician_assignment_uros/widgets/text_widget.dart';
 import 'package:gap/gap.dart';
 
 class StepButtons extends StatelessWidget {
@@ -24,9 +24,8 @@ class StepButtons extends StatelessWidget {
             onPressed: () {
               onBack();
             },
-            child: Text(
+            child: TextWidget(
               currentStep == 0 ? "Cancel" : 'Back',
-              style: TypographyConstants.whiteText,
             ),
           ),
           const Gap(15),
@@ -34,9 +33,8 @@ class StepButtons extends StatelessWidget {
             onPressed: () {
               onNext();
             },
-            child: Text(
+            child: TextWidget(
               currentStep == 2 ? "Confirm" : 'Next',
-              style: TypographyConstants.whiteText,
             ),
           ),
         ],

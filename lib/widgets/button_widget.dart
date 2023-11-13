@@ -31,11 +31,11 @@ class ButtonWidget extends StatelessWidget {
         },
         child: Container(
           width: 400,
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          margin: const EdgeInsets.fromLTRB(20, 0, 20, 15),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           decoration: BoxDecoration(
             color: isPrimary ? ColorConstants.primaryColor : Colors.white,
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: DimensionConstants.buttonBorderRadius,
           ),
           child: Row(
             children: [
