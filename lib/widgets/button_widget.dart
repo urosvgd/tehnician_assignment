@@ -34,7 +34,7 @@ class ButtonWidget extends StatelessWidget {
           margin: const EdgeInsets.fromLTRB(20, 0, 20, 15),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           decoration: BoxDecoration(
-            color: isPrimary ? ColorConstants.primaryColor : Colors.white,
+            color: isPrimary ? ColorConstants.primaryColor : ColorConstants.white,
             borderRadius: DimensionConstants.buttonBorderRadius,
           ),
           child: Row(
@@ -47,13 +47,13 @@ class ButtonWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 18.0),
                       child: Icon(
                         icon,
-                        color: isPrimary ? Colors.white : ColorConstants.primaryColor,
+                        color: isPrimary ? ColorConstants.white : ColorConstants.primaryColor,
                       ),
                     ),
                     Text(
                       text,
                       style: TextStyle(
-                        color: isPrimary ? Colors.white : ColorConstants.primaryColor,
+                        color: isPrimary ? ColorConstants.white : ColorConstants.primaryColor,
                       ),
                     ),
                   ],
@@ -62,7 +62,7 @@ class ButtonWidget extends StatelessWidget {
               showArrow
                   ? const Icon(
                       Icons.arrow_right,
-                      color: Colors.white,
+                      color: ColorConstants.white,
                     )
                   : const SizedBox.shrink()
             ],

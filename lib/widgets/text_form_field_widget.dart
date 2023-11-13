@@ -31,7 +31,7 @@ class TextFormFieldWidget extends StatelessWidget {
         border: const OutlineInputBorder(),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.white,
+            color: ColorConstants.white,
           ),
         ),
         hintStyle: TypographyConstants.whiteText,

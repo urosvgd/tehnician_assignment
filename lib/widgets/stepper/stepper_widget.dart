@@ -115,7 +115,7 @@ class _StepperWidgetState extends State<StepperWidget> {
       content: Container(
         padding: DimensionConstants.verticalPaddingAll8,
         decoration: BoxDecoration(
-          color: Colors.grey,
+          color: ColorConstants.grey,
           borderRadius: DimensionConstants.standardBorderRadius,
         ),
         child: SummaryWidget(

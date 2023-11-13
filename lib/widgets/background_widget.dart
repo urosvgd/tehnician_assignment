@@ -33,7 +33,7 @@ class BackgroundWidget extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.1),
+            color: ColorConstants.black.withOpacity(0.1),
           ),
         ),
         Center(

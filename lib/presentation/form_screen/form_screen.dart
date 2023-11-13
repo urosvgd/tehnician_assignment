@@ -28,7 +28,7 @@ class _FormScreenState extends State<FormScreen> {
               margin: DimensionConstants.horizontalAndVertical30,
               decoration: BoxDecoration(
                 borderRadius: DimensionConstants.standardBorderRadius,
-                color: Colors.grey.withOpacity(0.7),
+                color: ColorConstants.grey.withOpacity(0.7),
               ),
               child: Form(
                 key: _formKey,

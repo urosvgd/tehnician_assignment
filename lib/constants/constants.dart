@@ -5,6 +5,11 @@ class ColorConstants {
   static const Color _gradientColor1 = Color(0xff3B7C99);
   static const Color _gradientColor2 = Color(0xff4395B2);
   static const Color _gradientColor3 = Color(0xff835E8A);
+  static const Color grey = Colors.grey;
+  static const Color black = Colors.black;
+  static const Color white = Colors.white;
+  static const Color white70 = Colors.white70;
+  static const Color cardSelected = Colors.amber;
 
   static const List<Color> gradientColors = [_gradientColor1, _gradientColor2, _gradientColor3];
 }
