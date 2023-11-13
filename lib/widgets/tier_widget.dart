@@ -24,7 +24,7 @@ class TierWidget extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: DimensionConstants.standardBorderRadius,
             border: Border.all(
-              color: tier.isSelected ? Colors.amber : Colors.white70,
+              color: tier.isSelected ? ColorConstants.cardSelected : ColorConstants.white70,
               width: 1.0,
             ),
             gradient: const LinearGradient(
