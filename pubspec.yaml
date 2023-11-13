@@ -42,6 +42,8 @@ dependencies:
   equatable: ^2.0.5
   gap: any
   formz: ^0.6.1
+  flutter_localization: ^0.1.14
+  intl: ^0.18.1
  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

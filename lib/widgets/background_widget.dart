@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/locale.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/button_widget.dart';
 
 class BackgroundWidget extends StatelessWidget {
@@ -53,7 +55,7 @@ class BackgroundWidget extends StatelessWidget {
                   ? Column(
                       children: [
                         ButtonWidget(
-                          text: "Proceedix Enterpirse",
+                          text: AppLocale.proceedixButton.getString(context),
                           isPrimary: true,
                           icon: Icons.cloud,
                           showArrow: true,
@@ -62,7 +64,7 @@ class BackgroundWidget extends StatelessWidget {
                           },
                         ),
                         ButtonWidget(
-                          text: "Login",
+                          text: AppLocale.loginButton.getString(context),
                           icon: Icons.person_2,
                           isPrimary: false,
                           onPressed: () {

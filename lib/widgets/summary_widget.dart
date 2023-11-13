@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/locale.dart';
 import 'package:flutter_tehnician_assignment_uros/domain/entity/tier_entity.dart';
 import 'package:flutter_tehnician_assignment_uros/presentation/form_screen/form/form_bloc.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/text_widget.dart';
@@ -17,6 +19,14 @@ class SummaryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String tierName = '';
+    if (tier.name == 'basic') {
+      tierName = AppLocale.basicTier.getString(context);
+    } else if (tier.name == 'normal') {
+      tierName = AppLocale.normalTier.getString(context);
+    } else {
+      tierName = AppLocale.advancedTier.getString(context);
+    }
     return Column(
       children: [
         Padding(
@@ -24,17 +34,11 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                "Full Name:",
-                style: TypographyConstants.whiteText,
-                maxLines: 3,
-                textScaleFactor: 0.7,
+              TextWidget.scaledDown(
+                AppLocale.fullName.getString(context),
               ),
-              Text(
+              TextWidget.scaledDown(
                 context.read<FormScreenBloc>().state.fullName.value.fold((l) => '', (r) => r),
-                style: TypographyConstants.whiteText,
-                maxLines: 3,
-                textScaleFactor: 0.7,
               ),
             ],
           ),
@@ -44,8 +48,8 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const TextWidget.scaledDown(
-                "Email:",
+              TextWidget.scaledDown(
+                AppLocale.email.getString(context),
               ),
               TextWidget.scaledDown(context.read<FormScreenBloc>().state.emailAddress.value.fold((l) => '', (r) => r)),
             ],
@@ -56,7 +60,9 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const TextWidget.scaledDown("Phone number:"),
+              TextWidget.scaledDown(
+                AppLocale.phoneNumber.getString(context),
+              ),
               TextWidget.scaledDown(
                 context.read<FormScreenBloc>().state.phoneNumber.value.fold((l) => '', (r) => r),
               ),
@@ -68,8 +74,10 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const TextWidget.scaledDown("Plan:"),
-              TextWidget.scaledDown(tier.name),
+              TextWidget.scaledDown(
+                AppLocale.plan.getString(context),
+              ),
+              TextWidget.scaledDown(tierName),
             ],
           ),
         ),
@@ -78,8 +86,12 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const TextWidget.scaledDown("Billing schedule:"),
-              TextWidget.scaledDown(isYearly ? 'Yearly' : 'Monthly'),
+              TextWidget.scaledDown(
+                AppLocale.billingSchedule.getString(context),
+              ),
+              TextWidget.scaledDown(
+                isYearly ? AppLocale.yearlyLabelTier.getString(context) : AppLocale.monthlyLabelTier.getString(context),
+              ),
             ],
           ),
         ),
@@ -88,8 +100,12 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const TextWidget.scaledDown("Discount:"),
-              TextWidget.scaledDown(isYearly ? '2 months discount' : 'No discount'),
+              TextWidget.scaledDown(
+                AppLocale.discount.getString(context),
+              ),
+              TextWidget.scaledDown(
+                isYearly ? AppLocale.discountTwoMonths.getString(context) : AppLocale.noDiscount.getString(context),
+              ),
             ],
           ),
         ),
@@ -98,7 +114,9 @@ class SummaryWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const TextWidget.scaledDown("Total:"),
+              TextWidget.scaledDown(
+                AppLocale.total.getString(context),
+              ),
               TextWidget.scaledDown("€${tier.price.toString()}"),
             ],
           ),

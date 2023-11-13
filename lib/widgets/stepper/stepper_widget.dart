@@ -3,7 +3,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/locale.dart';
 import 'package:flutter_tehnician_assignment_uros/presentation/form_screen/form/form_bloc.dart';
 import 'package:flutter_tehnician_assignment_uros/domain/entity/tier_entity.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/alert_dialog.dart';
@@ -109,8 +111,8 @@ class _StepperWidgetState extends State<StepperWidget> {
     return Step(
       state: currentStepFromBloc > 2 ? StepState.complete : StepState.indexed,
       isActive: currentStepFromBloc >= 2,
-      title: const TextWidget(
-        'Summary',
+      title: TextWidget(
+        AppLocale.formSummary.getString(context),
       ),
       content: Container(
         padding: DimensionConstants.verticalPaddingAll8,
@@ -133,8 +135,8 @@ class _StepperWidgetState extends State<StepperWidget> {
     return Step(
       state: currentStepFromBloc > step2 ? StepState.complete : StepState.indexed,
       isActive: currentStepFromBloc >= step2,
-      title: const TextWidget(
-        'Choose tier',
+      title: TextWidget(
+        AppLocale.formChooseTier.getString(context),
       ),
       content: StepTwo(
         tiers: tiers,
@@ -157,8 +159,8 @@ class _StepperWidgetState extends State<StepperWidget> {
     return Step(
       state: currentStepFromBloc > 0 ? StepState.complete : StepState.indexed,
       isActive: currentStepFromBloc >= 0,
-      title: const TextWidget(
-        'Personal informations',
+      title: TextWidget(
+        AppLocale.formPersonalInformations.getString(context),
       ),
       content: StepOne(
         onFullNameChange: (value) {
@@ -167,7 +169,7 @@ class _StepperWidgetState extends State<StepperWidget> {
         onFullNameValidator: (value) {
           return bloc.state.fullName.value.fold<String?>(
             (f) => f.maybeMap<String?>(
-              invalidFullName: (_) => 'Invalid full name',
+              invalidFullName: (_) => AppLocale.invalidFirstName.getString(context),
               orElse: () => null,
             ),
             (_) => null,
@@ -179,7 +181,7 @@ class _StepperWidgetState extends State<StepperWidget> {
         onEmailValidator: (value) {
           return bloc.state.emailAddress.value.fold<String?>(
             (f) => f.maybeMap<String?>(
-              invalidEmail: (_) => 'Invalid email',
+              invalidEmail: (_) => AppLocale.invalidEmail.getString(context),
               orElse: () => null,
             ),
             (_) => null,
@@ -191,7 +193,7 @@ class _StepperWidgetState extends State<StepperWidget> {
         onPhoneNumberValidator: (value) {
           return bloc.state.phoneNumber.value.fold<String?>(
             (f) => f.maybeMap<String?>(
-              invalidPhoneNumber: (_) => 'Invalid phone number',
+              invalidPhoneNumber: (_) => AppLocale.phoneNumber.getString(context),
               orElse: () => null,
             ),
             (_) => null,

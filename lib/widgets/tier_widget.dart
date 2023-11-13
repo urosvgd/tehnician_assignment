@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/locale.dart';
 import 'package:flutter_tehnician_assignment_uros/domain/entity/tier_entity.dart';
+import 'package:flutter_tehnician_assignment_uros/widgets/text_widget.dart';
 
 class TierWidget extends StatelessWidget {
   final Tier tier;
@@ -14,6 +17,14 @@ class TierWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String tierName = '';
+    if (tier.name == 'basic') {
+      tierName = AppLocale.basicTier.getString(context);
+    } else if (tier.name == 'normal') {
+      tierName = AppLocale.normalTier.getString(context);
+    } else {
+      tierName = AppLocale.advancedTier.getString(context);
+    }
     return Material(
       color: Colors.white.withAlpha(50),
       child: InkWell(
@@ -39,15 +50,14 @@ class TierWidget extends StatelessWidget {
                 Padding(
                   padding: DimensionConstants.verticalPaddingAll8,
                   child: Text(
-                    tier.name,
+                    tierName,
                     style: TypographyConstants.whiteText,
                   ),
                 ),
                 Padding(
                   padding: DimensionConstants.verticalPaddingAll8,
-                  child: Text(
+                  child: TextWidget(
                     "€${tier.price.toString()}",
-                    style: TypographyConstants.whiteText,
                   ),
                 )
               ],

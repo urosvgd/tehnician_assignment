@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/locale.dart';
 import 'package:flutter_tehnician_assignment_uros/domain/entity/tier_entity.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/text_widget.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/tier_widget.dart';
@@ -38,8 +40,8 @@ class StepTwo extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextWidget(
-              "Monthly",
+            TextWidget(
+              AppLocale.monthlyLabelTier.getString(context),
             ),
             Switch(
               value: isTierYearly,
@@ -47,14 +49,14 @@ class StepTwo extends StatelessWidget {
                 onToggleYearly(value);
               },
             ),
-            const TextWidget(
-              "Yearly",
+            TextWidget(
+              AppLocale.yearlyLabelTier.getString(context),
             ),
           ],
         ),
         isTierYearly
-            ? const TextWidget(
-                "You have 2 months free",
+            ? TextWidget(
+                AppLocale.twoMonthsFree.getString(context),
               )
             : const SizedBox.shrink()
       ],

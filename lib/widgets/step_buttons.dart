@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/locale.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/text_widget.dart';
 import 'package:gap/gap.dart';
 
@@ -25,7 +27,7 @@ class StepButtons extends StatelessWidget {
               onBack();
             },
             child: TextWidget(
-              currentStep == 0 ? "Cancel" : 'Back',
+              currentStep == 0 ? AppLocale.formCancelButton.getString(context) : AppLocale.formBackButton.getString(context),
             ),
           ),
           const Gap(15),
@@ -34,7 +36,7 @@ class StepButtons extends StatelessWidget {
               onNext();
             },
             child: TextWidget(
-              currentStep == 2 ? "Confirm" : 'Next',
+              currentStep == 2 ? AppLocale.formConfirmButton.getString(context) : AppLocale.formNextButton.getString(context),
             ),
           ),
         ],

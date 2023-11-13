@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_tehnician_assignment_uros/constants/constants.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/locale.dart';
 import 'package:flutter_tehnician_assignment_uros/widgets/text_form_field_widget.dart';
 
 class StepOne extends StatefulWidget {
@@ -44,7 +46,7 @@ class _StepOneState extends State<StepOne> {
             onChange: (value) {
               widget.onFullNameChange(value);
             },
-            labelText: 'Full name',
+            labelText: AppLocale.fullName.getString(context),
             validator: (_) {
               return widget.onFullNameValidator(_);
             },
@@ -53,7 +55,7 @@ class _StepOneState extends State<StepOne> {
         TextFormFieldWidget(
           isNumberKeyboard: false,
           controller: emailController,
-          labelText: 'Email',
+          labelText: AppLocale.email.getString(context),
           onChange: (value) {
             widget.onEmailChange(value);
           },
@@ -66,7 +68,7 @@ class _StepOneState extends State<StepOne> {
           child: TextFormFieldWidget(
             isNumberKeyboard: true,
             controller: phoneNumberController,
-            labelText: 'Phone number',
+            labelText: AppLocale.phoneNumber.getString(context),
             onChange: (value) {
               widget.onPhoneNumberChange(value);
             },

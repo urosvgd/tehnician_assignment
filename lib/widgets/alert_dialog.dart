@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
+import 'package:flutter_tehnician_assignment_uros/constants/locale.dart';
 
 Future<void> showAlertDialog(context) async {
   return showDialog<void>(
@@ -7,23 +9,23 @@ Future<void> showAlertDialog(context) async {
     barrierDismissible: true,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: const Text('Confirmation dialog'),
-        content: const SingleChildScrollView(
+        title: Text(AppLocale.confirmationDialogTitle.getString(context)),
+        content: SingleChildScrollView(
           child: ListBody(
             children: <Widget>[
-              Text("After confirming you're going to enjoy this tier!"),
+              Text(AppLocale.confirmationDialogBody.getString(context)),
             ],
           ),
         ),
         actions: <Widget>[
           TextButton(
-            child: const Text('No'),
+            child: Text(AppLocale.declineButtonText.getString(context)),
             onPressed: () {
               Navigator.of(context).pop();
             },
           ),
           TextButton(
-            child: const Text('Yes'),
+            child: Text(AppLocale.confirmButtonText.getString(context)),
             onPressed: () {
               context.router.pushNamed('/');
             },
